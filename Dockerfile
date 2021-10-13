@@ -66,6 +66,10 @@ RUN \
 	sudo \
 	tar \
 	unzip && \
+ echo "**** install pdlib & dlib ****" && \
+ apk add --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
+	php7-pdlib \
+	dlib && \
  echo "**** compile smbclient ****" && \
  git clone git://github.com/eduardok/libsmbclient-php.git /tmp/smbclient && \
  cd /tmp/smbclient && \
