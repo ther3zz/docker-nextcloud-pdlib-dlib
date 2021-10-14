@@ -66,7 +66,8 @@ RUN \
 	sudo \
 	tar \
 	unzip \
-  clamav && \
+  clamav \
+  clamav-libunrar && \
  echo "**** install pdlib & dlib ****" && \
  apk add --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 	php7-pdlib \
@@ -113,6 +114,11 @@ RUN \
  rm -rf \
 	/tmp/*
 
+# update clamav db
+RUN \
+ echo "**** updating clamav ****" && \
+ freshclam \
+ 
 # copy local files
 COPY root/ /
 
