@@ -65,7 +65,8 @@ RUN \
 	samba-client \
 	sudo \
 	tar \
-	unzip && \
+	unzip \
+  clamav && \
  echo "**** install pdlib & dlib ****" && \
  apk add --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing \
 	php7-pdlib \
